@@ -843,3 +843,23 @@ p {
 .opportunity-categories {
   padding: 80px 0 100px;
 }
+
+/* Better Opportunity Cards */
+.opportunity-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.opportunity-card p {
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.card-cta {
+  margin-top: auto;
+  width: 100%;
+  min-height: 48px;
+  font-size: 13.5px;
+  justify-content: center;
+}
