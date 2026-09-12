@@ -1625,94 +1625,108 @@ nav a:hover::after {
   }
 
    /* =========================================================
-   OPPORTUNITIES PAGE – IMPROVED DESIGN
+   OPPORTUNITIES PAGE – STRONG REDESIGN
    ========================================================= */
 
-.page-hero {
+.opp-hero {
   background: var(--cream);
-  padding: 100px 0 80px;
+  padding: 110px 0 90px;
   position: relative;
   overflow: hidden;
 }
 
-.page-hero .container {
-  max-width: 900px;
+.opp-hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: var(--gold);
+  opacity: 0.08;
+  border-radius: 50%;
+  right: -120px;
+  top: -140px;
 }
 
-.page-hero .section-label {
+.opp-hero-content {
+  max-width: 780px;
+  position: relative;
+  z-index: 2;
+}
+
+.opp-hero .section-label {
   display: inline-block;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: var(--green);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.page-hero h1 {
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+.opp-hero h1 {
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
   color: var(--navy);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.page-hero p {
-  max-width: 680px;
+.opp-hero p {
+  max-width: 620px;
   font-size: 1.15rem;
   line-height: 1.75;
   color: #4B5563;
 }
 
-/* Categories section */
+/* Categories */
 
-.opportunity-categories {
+.opp-categories {
   padding: 90px 0 110px;
-  background: var(--white);
+  background: #fff;
 }
 
-.opportunity-categories .card-grid {
+.opp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
-/* Individual cards */
-
-.opportunity-card {
-  background: var(--white);
-  border: 1px solid #E8ECF1;
-  border-radius: 18px;
-  padding: 36px 30px;
+.opp-card {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  background: #fff;
+  border: 1px solid #E6EAF0;
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
-.opportunity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(26, 64, 121, 0.10);
+.opp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(26, 64, 121, 0.12);
   border-color: transparent;
 }
 
-.card-icon {
+.opp-number {
   font-size: 0.85rem;
   font-weight: 800;
   color: var(--green);
-  letter-spacing: 0.08em;
-  margin-bottom: 18px;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
 }
 
-.opportunity-card h3 {
-  font-size: 1.35rem;
+.opp-card h3 {
+  font-size: 1.4rem;
   color: var(--navy);
   margin-bottom: 14px;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
-.opportunity-card p {
+.opp-card p {
   font-size: 0.98rem;
   color: #536171;
   line-height: 1.7;
@@ -1720,13 +1734,22 @@ nav a:hover::after {
   flex-grow: 1;
 }
 
-.opportunity-card .btn {
-  align-self: flex-start;
-  margin-top: auto;
+.opp-link {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.25s ease;
 }
 
-/* Accent bar on cards */
-.opportunity-card::before {
+.opp-card:hover .opp-link {
+  transform: translateX(6px);
+}
+
+/* Subtle top accent */
+.opp-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1738,50 +1761,67 @@ nav a:hover::after {
   transition: opacity 0.3s ease;
 }
 
-.opportunity-card:hover::before {
+.opp-card:hover::before {
   opacity: 1;
 }
 
-/* Different accent colors */
-.opportunity-card:nth-child(2)::before { background: var(--gold); }
-.opportunity-card:nth-child(3)::before { background: var(--navy); }
-.opportunity-card:nth-child(4)::before { background: var(--green); }
-.opportunity-card:nth-child(5)::before { background: var(--gold); }
-.opportunity-card:nth-child(6)::before { background: var(--navy); }
+.opp-card:nth-child(2)::before { background: var(--gold); }
+.opp-card:nth-child(3)::before { background: var(--navy); }
+.opp-card:nth-child(4)::before { background: var(--green); }
+.opp-card:nth-child(5)::before { background: var(--gold); }
+.opp-card:nth-child(6)::before { background: var(--navy); }
 
-/* Final CTA already looks good, just ensure spacing */
+/* CTA */
 
-.final-cta {
-  margin-top: 0;
+.opp-cta {
+  background: var(--green);
+  padding: 90px 0;
+  text-align: center;
+  color: white;
+}
+
+.opp-cta h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opp-cta p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 /* Responsive */
 
 @media (max-width: 1000px) {
-  .opportunity-categories .card-grid {
+  .opp-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .page-hero {
-    padding: 70px 0 55px;
+  .opp-hero {
+    padding: 80px 0 60px;
   }
 
-  .page-hero h1 {
-    font-size: 2.4rem;
+  .opp-hero h1 {
+    font-size: 2.6rem;
   }
 
-  .opportunity-categories {
+  .opp-categories {
     padding: 60px 0 80px;
   }
 
-  .opportunity-categories .card-grid {
+  .opp-grid {
     grid-template-columns: 1fr;
   }
-}
-  .research-card h3 {
-    font-size: 1.45rem;
-  }
 
+  .opp-cta {
+    padding: 70px 0;
+  }
 }
