@@ -817,3 +817,29 @@ p {
     width: 100%;
   }
 }
+
+/* -------------------------
+   PAGE HERO (for inner pages)
+------------------------- */
+.page-hero {
+  padding: 80px 0 70px;
+  background: linear-gradient(145deg, #e7f6ef 0%, #f0f7fa 50%, #eef3f8 100%);
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 16px;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: -0.03em;
+}
+
+.page-hero p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.opportunity-categories {
+  padding: 80px 0 100px;
+}
