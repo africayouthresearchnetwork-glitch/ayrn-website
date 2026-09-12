@@ -1,6 +1,6 @@
 /* =========================================================
    AYRN — Africa Youth Research Network
-   Modern Redesign (AYIGH-inspired)
+   Final Modern Stylesheet (Clean + Blended Images)
 ========================================================= */
 
 :root {
@@ -19,7 +19,7 @@
   --border: #e5ebe8;
   --shadow-sm: 0 4px 20px rgba(26, 64, 121, 0.06);
   --shadow-md: 0 12px 40px rgba(26, 64, 121, 0.1);
-  --shadow-lg: 0 20px 60px rgba(26, 64, 121, 0.12);
+  --shadow-lg: 0 25px 60px rgba(26, 64, 121, 0.15);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -187,7 +187,6 @@ p {
 }
 
 .nav-menu a:not(.btn) {
-  position: relative;
   color: var(--charcoal);
   font-size: 14px;
   font-weight: 600;
@@ -241,116 +240,106 @@ p {
 }
 
 /* -------------------------
-   HERO
+   HERO (Two-column with blended image)
 ------------------------- */
 .hero {
   position: relative;
-  background: linear-gradient(160deg, #e8f7f0 0%, #f0f7fa 55%, #eef4f8 100%);
-  padding: 90px 0 100px;
+  background: linear-gradient(145deg, #e7f6ef 0%, #f0f7fa 50%, #eef3f8 100%);
+  padding: 80px 0 90px;
   overflow: hidden;
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 2;
+  max-width: 540px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  padding: 9px 18px;
-  background: rgba(20, 169, 107, 0.12);
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  background: rgba(20, 169, 107, 0.13);
   color: var(--green-dark);
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  border-radius: 999px;
 }
 
 .hero h1 {
-  margin-bottom: 22px;
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 4.8vw, 3.9rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
   color: var(--navy);
 }
 
 .hero-subtitle {
-  max-width: 520px;
-  margin-bottom: 32px;
-  font-size: 16.5px;
-  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.75;
   color: var(--muted);
 }
 
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Hero Image */
-.hero-image {
+/* Image side - blended */
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image-wrapper {
   position: relative;
-  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  background: var(--navy);
 }
 
-.hero-image img {
+.hero-image-wrapper img {
   width: 100%;
-  height: 100%;
-  min-height: 460px;
+  height: 480px;
   object-fit: cover;
   display: block;
 }
 
-.hero-image::after {
-  content: "";
+.hero-image-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(18, 49, 93, 0.55) 0%,
-    rgba(18, 49, 93, 0.1) 45%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-.hero-image-tag {
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 26px;
+  background: linear-gradient(to top, rgba(18, 49, 93, 0.85), transparent);
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  color: var(--white);
 }
 
-.hero-image-tag strong {
-  color: var(--gold);
-  font-size: 22px;
+.hero-image-overlay strong {
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 0.06em;
+  color: var(--gold);
 }
 
-.hero-image-tag span {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+.hero-image-overlay span {
+  font-size: 13px;
+  font-weight: 500;
   opacity: 0.9;
 }
 
@@ -544,16 +533,48 @@ p {
 }
 
 /* -------------------------
-   OPPORTUNITIES
+   OPPORTUNITIES (with blended image)
 ------------------------- */
 .opportunities {
   padding: 100px 0;
   background: var(--white);
-  text-align: center;
 }
 
-.opportunity-actions {
-  margin-top: 10px;
+.opportunity-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.opportunity-content .section-label {
+  margin-bottom: 12px;
+}
+
+.opportunity-content h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  letter-spacing: -0.03em;
+}
+
+.opportunity-content p {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.opportunity-image {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.opportunity-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
 }
 
 /* -------------------------
@@ -658,6 +679,10 @@ p {
   .card-grid.three-cols {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .opportunity-layout {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -714,16 +739,44 @@ p {
     text-align: center;
   }
 
+  /* Hero mobile */
   .hero {
-    padding: 80px 0 90px;
+    padding: 60px 0 70px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-text {
+    max-width: 100%;
   }
 
   .hero h1 {
-    font-size: clamp(2.3rem, 9vw, 3.4rem);
+    font-size: clamp(2.2rem, 8.5vw, 3.1rem);
   }
 
-  .hero-subtitle {
-    font-size: 15px;
+  .hero-visual {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    max-width: 100%;
+  }
+
+  .hero-image-wrapper img {
+    height: 340px;
+  }
+
+  /* Opportunities mobile */
+  .opportunity-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .opportunity-image img {
+    height: 300px;
   }
 
   .about,
