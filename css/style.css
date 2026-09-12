@@ -1624,6 +1624,162 @@ nav a:hover::after {
     font-size: 1.6rem;
   }
 
+   /* =========================================================
+   OPPORTUNITIES PAGE – IMPROVED DESIGN
+   ========================================================= */
+
+.page-hero {
+  background: var(--cream);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero .container {
+  max-width: 900px;
+}
+
+.page-hero .section-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.page-hero p {
+  max-width: 680px;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #4B5563;
+}
+
+/* Categories section */
+
+.opportunity-categories {
+  padding: 90px 0 110px;
+  background: var(--white);
+}
+
+.opportunity-categories .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Individual cards */
+
+.opportunity-card {
+  background: var(--white);
+  border: 1px solid #E8ECF1;
+  border-radius: 18px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(26, 64, 121, 0.10);
+  border-color: transparent;
+}
+
+.card-icon {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+.opportunity-card h3 {
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.opportunity-card p {
+  font-size: 0.98rem;
+  color: #536171;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.opportunity-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Accent bar on cards */
+.opportunity-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--green);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.opportunity-card:hover::before {
+  opacity: 1;
+}
+
+/* Different accent colors */
+.opportunity-card:nth-child(2)::before { background: var(--gold); }
+.opportunity-card:nth-child(3)::before { background: var(--navy); }
+.opportunity-card:nth-child(4)::before { background: var(--green); }
+.opportunity-card:nth-child(5)::before { background: var(--gold); }
+.opportunity-card:nth-child(6)::before { background: var(--navy); }
+
+/* Final CTA already looks good, just ensure spacing */
+
+.final-cta {
+  margin-top: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .opportunity-categories .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 70px 0 55px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .opportunity-categories {
+    padding: 60px 0 80px;
+  }
+
+  .opportunity-categories .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
   .research-card h3 {
     font-size: 1.45rem;
   }
