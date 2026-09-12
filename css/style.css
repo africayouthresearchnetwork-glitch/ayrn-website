@@ -1668,7 +1668,7 @@ nav a:hover::after {
   line-height: 1.02;
   letter-spacing: -0.045em;
   color: var(--navy);
-  margin-bottom: 24px;
+  margin-bottom: 32px;   /* increased from 24px */
 }
 
 .opp-hero p {
