@@ -1760,11 +1760,6 @@ nav a:hover::after {
     transition: gap 0.2s ease, color 0.2s ease;
 }
 
-.opp-link::after {
-    content: "→";
-    font-size: 1.1rem;
-    transition: transform 0.2s ease;
-}
 
 .opp-link:hover {
     color: var(--navy);
