@@ -1846,3 +1846,17 @@ nav a:hover::after {
         padding: 65px 0;
     }
 }
+/* Remove underlines from opportunity cards and links */
+.opp-card,
+.opp-card a,
+.opp-card h3,
+.opp-card p,
+.opp-link {
+    text-decoration: none;
+}
+
+.opp-card:hover,
+.opp-card a:hover,
+.opp-link:hover {
+    text-decoration: none;
+}
